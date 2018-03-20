@@ -1,0 +1,10 @@
+0000-0000 Bind Pose
+0001-0001 T-Pose
+0211-0811 loop Idle
+0821-0851 loop Walk
+0861-0884 loop Run
+0890-0940 loop Claws Attack 1
+0950-0995 loop Claws Attack 2
+1061-1161 loop Defend
+1170-1205 loop Hit
+1210-1305 Death
