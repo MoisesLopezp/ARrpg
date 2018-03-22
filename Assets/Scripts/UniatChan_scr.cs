@@ -7,9 +7,11 @@ public class UniatChan_scr : MonoBehaviour, ITrackableEventHandler
 {
     TrackableBehaviour trackable;
     GameManager gameManager;
+    scr_Character mycharacter;
 
     void Start()
     {
+        mycharacter = GetComponent<scr_Character>();
         gameManager = FindObjectOfType<GameManager>();
         trackable = this.GetComponent<TrackableBehaviour>();
         if (trackable)
@@ -21,10 +23,15 @@ public class UniatChan_scr : MonoBehaviour, ITrackableEventHandler
         if (NewSta == TrackableBehaviour.Status.DETECTED || NewSta == TrackableBehaviour.Status.TRACKED)
         {
             gameManager.SetBJugador(true);
+            mycharacter.Canvas.SetActive(true);
+            if (!scr_MGBattle.InGame)
+                mycharacter.IsInGame = true;
         }
         else
         {
             gameManager.SetBJugador(false);
+            mycharacter.Canvas.SetActive(false);
+            mycharacter.IsInGame = false;
         }
     }
 }

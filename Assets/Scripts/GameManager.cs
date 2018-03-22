@@ -52,7 +52,8 @@ public class GameManager : MonoBehaviour
 
     void ActivarUI()
     {
-        UI.SetActive(true);
+        if (!scr_MGBattle.InGame)
+            UI.SetActive(true);
     }
 
     void DesactivarUI()
