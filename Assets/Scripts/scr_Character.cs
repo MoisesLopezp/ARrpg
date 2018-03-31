@@ -29,12 +29,13 @@ public class scr_Character : MonoBehaviour {
 
         if (IsPlayer)
         {
-            f_maxhp = scr_Player.f_maxhp;
-            f_atk = scr_Player.f_atk;
+            f_maxhp = scr_Player.i_maxhp;
+            f_atk = scr_Player.i_atk;
             i_stamina = scr_Player.i_stamina;
-            f_armor = scr_Player.f_armor;
-            f_critic = scr_Player.f_critic;
-            f_vampiric = scr_Player.f_vampiric;
+            f_armor = scr_Player.i_armor;
+            f_critic = ((float)scr_Player.i_critic)*0.001f;
+            f_vampiric = ((float)scr_Player.i_vampiric) * 0.001f;
+            transform.GetChild(0).GetChild(0).GetComponent<SkinnedMeshRenderer>().material.color = Color.HSVToRGB(scr_Player.f_colorhair, 0.75f, 1f);
         }
         f_hp = f_maxhp;
 

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<languages>
+  <English>
+    <string name="None">-</string>
+    <string name="txt_game_info_01">NOW LOADING...</string>
+  </English>
+  <Spanish>
+    <string name="None">-</string>
+    <string name="txt_game_info_01">Cargando...</string>
+  </Spanish>
+</languages>

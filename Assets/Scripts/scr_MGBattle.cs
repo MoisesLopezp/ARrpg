@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class scr_MGBattle : MonoBehaviour {
@@ -13,6 +14,8 @@ public class scr_MGBattle : MonoBehaviour {
     public GameObject BattleOptions;
     public GameObject TargetPanel;
     public Text Actions;
+
+    public GameObject GameOver;
 
     int IC = 0;
 
@@ -107,6 +110,19 @@ public class scr_MGBattle : MonoBehaviour {
 
     public void NextTurn()
     {
+        if (Enemys.Count==0)
+        {
+            GameOver.SetActive(true);
+            GameOver.transform.GetChild(0).gameObject.SetActive(true);
+            return;
+        }
+        if (Player == null)
+        {
+            GameOver.SetActive(true);
+            GameOver.transform.GetChild(1).gameObject.SetActive(true);
+            return;
+        }
+
         if (OrderBattle.Count==0)
         {
             return;
@@ -125,5 +141,15 @@ public class scr_MGBattle : MonoBehaviour {
         {
             BattleOptions.SetActive(true);
         }
+    }
+
+    public void Replay()
+    {
+        SceneManager.LoadScene("Juego");
+    }
+
+    public void ExitToMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }

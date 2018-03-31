@@ -4,21 +4,12 @@ using UnityEngine;
 
 public class scr_Player : MonoBehaviour {
 
-    public static float f_maxhp = 100f;
-    public static float f_atk = 20f;
-    public static int i_stamina = 5;
-    public static float f_armor = 0f;
-    public static float f_critic = 0.1f;
-    public static float f_vampiric = 0f;
-    public static bool IsPlayer = false;
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public static int i_maxhp = 100;
+    public static int i_stamina = 50;
+    public static int i_atk = 30;
+    public static int i_armor = 7;
+    public static int i_critic = 25;
+    public static int i_vampiric = 25;
+    public static float f_colorhair = 0.1f;
+    public static int Op_Leng = 1;
 }
