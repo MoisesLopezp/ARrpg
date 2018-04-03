@@ -10,7 +10,7 @@ public class Menu_Scr : MonoBehaviour
     public static SaveGameFree.scr_DataSave MyData;
     public static string fileName = "PlayerData";
     
-    public void Start()
+    public void Awake()
     {
         
         // Initialize our game data
@@ -63,5 +63,12 @@ public class Menu_Scr : MonoBehaviour
     public void SwitchCredits()
     {
         Credits.SetActive(!Credits.activeSelf);
+    }
+
+    public void SetLeng(int Leng)
+    {
+        scr_Player.Op_Leng = Leng;
+        scr_Lang.setLanguage();
+        SaveDataPlayer();
     }
 }

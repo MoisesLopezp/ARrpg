@@ -80,7 +80,7 @@ public class scr_StatsEditor : MonoBehaviour {
     {
         if (IsLoading || EventSystem.current.currentSelectedGameObject != Ataque.gameObject)
             return;
-        Armadura.value = 10 - (Ataque.value * 0.1f);
+        Armadura.value = 10 - (Ataque.value * 0.2f);
         UpdateStats();
     }
 
@@ -88,7 +88,7 @@ public class scr_StatsEditor : MonoBehaviour {
     {
         if (IsLoading || EventSystem.current.currentSelectedGameObject != Armadura.gameObject)
             return;
-        Ataque.value = 110 - (Armadura.value * 10);
+        Ataque.value = 55 - (Armadura.value * 5);
         UpdateStats();
     }
 

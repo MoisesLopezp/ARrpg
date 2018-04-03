@@ -13,9 +13,27 @@ public class scr_MGBattle : MonoBehaviour {
 
     public GameObject BattleOptions;
     public GameObject TargetPanel;
+    public GameObject SpecialPanel;
     public Text Actions;
 
+    public GameObject fxs_Hit;
+    public GameObject fxs_CriticalHit;
+    public GameObject fxs_KO;
+    public GameObject fxs_Special;
+    public GameObject fxs_Defense;
+    public GameObject fxs_Winer;
+
     public GameObject GameOver;
+
+    public Button btn_skill_01;
+    public Button btn_skill_02;
+    public Button btn_skill_03;
+
+    public Text txt_skill_01;
+    public Text txt_skill_02;
+    public Text txt_skill_03;
+
+    public Button[] btn_Enemys = new Button[3];
 
     int IC = 0;
 
@@ -80,9 +98,15 @@ public class scr_MGBattle : MonoBehaviour {
         {
             BattleOptions.SetActive(false);
             TargetPanel.SetActive(true);
+            for (int i = 0; i < btn_Enemys.Length; i++)
+            {
+                btn_Enemys[i].gameObject.SetActive(false);
+            }
             for (int i=0; i<Enemys.Count; i++)
             {
                 Enemys[i].MyTrigger.SetActive(true);
+                btn_Enemys[i].gameObject.SetActive(true);
+                btn_Enemys[i].transform.GetComponentInChildren<Text>().text = Enemys[i].name;
             }
 
         } else
@@ -101,38 +125,158 @@ public class scr_MGBattle : MonoBehaviour {
 
     public void AttackTarget(scr_Character target)
     {
-        OrderBattle[IC].Attack(Enemys[0].gameObject);
-        Actions.text = OrderBattle[IC].gameObject.name+" Ataca a " + target.gameObject.name;
+        OrderBattle[IC].Attack(target.gameObject);
+        Actions.text = OrderBattle[IC].gameObject.name+" "+scr_Lang.GetText("txt_game_info_14") +" " + target.gameObject.name;
         BattleOptions.SetActive(false);
         TargetPanel.SetActive(false);
+        SpecialPanel.SetActive(false);
         delay_turn = 3f;
+        if (OrderBattle[IC].DoubleAttack)
+            delay_turn = 5f;
+    }
+
+    public void AttackTargetName(Text s_target)
+    {
+        scr_Character target = null;
+        for (int i=0; i<Enemys.Count; i++)
+        {
+            if (Enemys[i].name == s_target.text)
+            {
+                target = Enemys[i];
+                break;
+            }
+        }
+        OrderBattle[IC].Attack(target.gameObject);
+        Actions.text = OrderBattle[IC].gameObject.name + " " + scr_Lang.GetText("txt_game_info_14") + " " + target.gameObject.name;
+        BattleOptions.SetActive(false);
+        TargetPanel.SetActive(false);
+        SpecialPanel.SetActive(false);
+        delay_turn = 3f;
+        if (OrderBattle[IC].DoubleAttack)
+            delay_turn = 5f;
+    }
+
+    public void Defense()
+    {
+        GameObject _fxs = Instantiate(fxs_Defense, OrderBattle[IC].transform.position, Quaternion.identity);
+        Destroy(_fxs, 6f);
+        OrderBattle[IC].InDefense = true;
+        OrderBattle[IC].f_armor++;
+        Actions.text = OrderBattle[IC].gameObject.name + " "+scr_Lang.GetText("txt_game_info_15");
+        BattleOptions.SetActive(false);
+        TargetPanel.SetActive(false);
+        SpecialPanel.SetActive(false);
+        delay_turn = 3f;
+    }
+
+    public void CheckSkills()
+    {
+        btn_skill_01.interactable = true;
+        btn_skill_02.interactable = true;
+        btn_skill_03.interactable = true;
+
+        txt_skill_01.text = scr_Lang.GetText("txt_game_info_17");
+        txt_skill_02.text = scr_Lang.GetText("txt_game_info_18");
+        txt_skill_03.text = scr_Lang.GetText("txt_game_info_19");
+
+        if (OrderBattle[IC].i_stamina < 3)
+        {
+            btn_skill_01.interactable = false;
+            txt_skill_01.text = scr_Lang.GetText("txt_game_info_16");
+        }
+        if (OrderBattle[IC].i_stamina<6)
+        {
+            btn_skill_02.interactable = false;
+            txt_skill_02.text = scr_Lang.GetText("txt_game_info_16");
+        }
+        if (OrderBattle[IC].i_stamina <= 0)
+        {
+            btn_skill_03.interactable = false;
+            txt_skill_03.text = scr_Lang.GetText("txt_game_info_16");
+        }
+    }
+
+    public void CancelDoubleAttack()
+    {
+        OrderBattle[IC].DoubleAttack = false;
+    }
+
+    public void UseSpecial(int Special)
+    {
+        GameObject _fxs = Instantiate(fxs_Special, OrderBattle[IC].transform.position, Quaternion.identity);
+        Destroy(_fxs, 6f);
+        switch (Special)
+        {
+            case 0:
+                {
+                    while (OrderBattle[IC].i_stamina > 0)
+                    {
+                        OrderBattle[IC].f_hp += OrderBattle[IC].f_maxhp * 0.1f;
+                        OrderBattle[IC].i_stamina--;
+                    }
+                    BattleOptions.SetActive(false);
+                    SpecialPanel.SetActive(false);
+                    delay_turn = 3f;
+                    Actions.text = OrderBattle[IC].gameObject.name + " "+ scr_Lang.GetText("txt_game_info_20");
+                }
+                break;
+            case 1:
+                {
+                    OrderBattle[IC].DoubleAttack = true;
+                    SelectTarget();
+                    Actions.text = OrderBattle[IC].gameObject.name + " "+ scr_Lang.GetText("txt_game_info_21");
+                }
+                break;
+            case 2:
+                {
+                    while (OrderBattle[IC].i_stamina > 0)
+                    {
+
+                        OrderBattle[IC].i_stamina--;
+                        OrderBattle[IC].f_atk += OrderBattle[IC].f_baseatk * 0.2f;
+                    }
+                    BattleOptions.SetActive(false);
+                    SpecialPanel.SetActive(false);
+                    delay_turn = 3f;
+                    Actions.text = OrderBattle[IC].gameObject.name + " " +scr_Lang.GetText("txt_game_info_22");
+                }
+                break;
+        }
     }
 
     public void NextTurn()
     {
-        if (Enemys.Count==0)
+        if (Enemys.Count==0) //Winer
         {
+            GameObject _fxs = Instantiate(fxs_Winer, Player.transform.position, Quaternion.identity);
+            Destroy(_fxs, 10f);
             GameOver.SetActive(true);
             GameOver.transform.GetChild(0).gameObject.SetActive(true);
+            Actions.text = scr_Lang.GetText("txt_game_info_23");
             return;
         }
-        if (Player == null)
+        if (Player == null) //Defeat
         {
             GameOver.SetActive(true);
             GameOver.transform.GetChild(1).gameObject.SetActive(true);
+            Actions.text = scr_Lang.GetText("txt_game_info_24");
             return;
         }
 
         if (OrderBattle.Count==0)
         {
             return;
+        } else
+        {
+            for (int i = 0; i < OrderBattle.Count; i++)
+                OrderBattle[i].i_stamina++;
         }
         IC++;
         if (IC>= OrderBattle.Count)
         {
             IC = 0;
         }
-        Actions.text = "Es Turno de " + OrderBattle[IC].gameObject.name;
+        Actions.text = scr_Lang.GetText("txt_game_info_25")+" " + OrderBattle[IC].gameObject.name;
 
         if (!OrderBattle[IC].IsPlayer)
         {
@@ -141,6 +285,11 @@ public class scr_MGBattle : MonoBehaviour {
         {
             BattleOptions.SetActive(true);
         }
+    }
+
+    public void ImDeath(string _name)
+    {
+        Actions.text = _name + " "+scr_Lang.GetText("txt_game_info_26");
     }
 
     public void Replay()

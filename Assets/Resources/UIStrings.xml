@@ -2,10 +2,117 @@
 <languages>
   <English>
     <string name="None">-</string>
-    <string name="txt_game_info_01">NOW LOADING...</string>
+    <string name="txt_game_info_01">The battle begins</string>
+    <string name="txt_game_info_02">Defeat</string>
+    <string name="txt_game_info_03">Select an enemy</string>
+    <string name="txt_game_info_04">Back</string>
+    <string name="txt_game_info_05">Play again</string>
+    <string name="txt_game_info_06">Fury</string>
+    <string name="txt_game_info_07">Fend</string>
+    <string name="txt_game_info_08">Skills</string>
+    <string name="txt_game_info_09">Start</string>
+    <string name="txt_game_info_10">Attack</string>
+    <string name="txt_game_info_11">Double hit</string>
+    <string name="txt_game_info_12">Heal</string>
+    <string name="txt_game_info_13">Victory</string>
+    <string name="txt_game_info_14">Attack</string>
+    <string name="txt_game_info_15">Decide to defend and increase armor</string>
+    <string name="txt_game_info_16">You do not have enough magic</string>
+    <string name="txt_game_info_17">Turn all your magic into health (3 magic minimum)</string>
+    <string name="txt_game_info_18">Attack twice in a turn (6 magic)</string>
+    <string name="txt_game_info_19">Turn your magic into permanent damage (1 magic minimum)</string>
+    <string name="txt_game_info_20">Decides to heal</string>
+    <string name="txt_game_info_21">Decides to attack double</string>
+    <string name="txt_game_info_22">Decides to increase his damage</string>
+    <string name="txt_game_info_23">Uniat Chan has won!</string>
+    <string name="txt_game_info_24">Uniat Chan has been defeated</string>
+    <string name="txt_game_info_25">It's the turn of </string>
+    <string name="txt_game_info_26">has fallen in combat</string>
+
+    <string name="txt_name_enemy_01">Spider</string>
+    <string name="txt_name_enemy_02">Bear</string>
+    <string name="txt_name_enemy_03">Dragon</string>
+
+    <string name="txt_menu_info_01">
+      Code:
+      Alain Barragan
+      Moises Lopez
+      Art:
+      Unity Asset Store
+      Hector Mora
+      Moises Lopez
+    </string>
+    <string name="txt_menu_info_02">Save</string>
+    <string name="txt_menu_info_03">Attack</string>
+    <string name="txt_menu_info_04">Magic</string>
+    <string name="txt_menu_info_05">Armor</string>
+    <string name="txt_menu_info_06">Hair color</string>
+    <string name="txt_menu_info_07">Vampirism</string>
+    <string name="txt_menu_info_08">Critical</string>
+    <string name="txt_menu_info_09">Health points</string>
+    <string name="txt_menu_info_10">Credits</string>
+    <string name="txt_menu_info_11">Character</string>
+    <string name="txt_menu_info_12">Play</string>
+    <string name="txt_menu_info_13">Exit</string>
+    <string name="txt_menu_info_14">Uniat Chan Editor</string>
+    
   </English>
   <Spanish>
     <string name="None">-</string>
-    <string name="txt_game_info_01">Cargando...</string>
+
+    <string name="txt_game_info_01">La batalla ha comenzado</string>
+    <string name="txt_game_info_02">Derrota</string>
+    <string name="txt_game_info_03">Selecciona un objetivo</string>
+    <string name="txt_game_info_04">Atras</string>
+    <string name="txt_game_info_05">Jugar de nuevo</string>
+    <string name="txt_game_info_06">Furia</string>
+    <string name="txt_game_info_07">Defenderse</string>
+    <string name="txt_game_info_08">Habilidades</string>
+    <string name="txt_game_info_09">Iniciar</string>
+    <string name="txt_game_info_10">Atacar</string>
+    <string name="txt_game_info_11">Doble Golpe</string>
+    <string name="txt_game_info_12">Curarse</string>
+    <string name="txt_game_info_13">Victoria</string>
+    <string name="txt_game_info_14">Ataca a</string>
+    <string name="txt_game_info_15">Decide defenderse y aumentar armadura</string>
+    <string name="txt_game_info_16">No tienes suficiente magia</string>
+    <string name="txt_game_info_17">Combierte tu magia en salud (3 magia minimo)</string>
+    <string name="txt_game_info_18">Ataca dos veces en un turno (6 magia)</string>
+    <string name="txt_game_info_19">Combierte tu magia en daño permanente(1 magia minimo)</string>
+    <string name="txt_game_info_20">Decide curarse</string>
+    <string name="txt_game_info_21">Decide atacar doble</string>
+    <string name="txt_game_info_22">Decide aumentar su daño</string>
+    <string name="txt_game_info_23">¡Uniat Chan ha ganado!</string>
+    <string name="txt_game_info_24">Uniat Chan ha sido derrotada</string>
+    <string name="txt_game_info_25">Es turno de</string>
+    <string name="txt_game_info_26">ha caido en combate</string>
+
+    <string name="txt_name_enemy_01">Araña</string>
+    <string name="txt_name_enemy_02">Oso</string>
+    <string name="txt_name_enemy_03">Dragon</string>
+
+    <string name="txt_menu_info_01">
+      Programación:
+      Alain Barragan
+      Moises Lopez
+      Arte:
+      Unity Asset Store
+      Hector Mora
+      Moises Lopez
+    </string>
+    <string name="txt_menu_info_02">Guardar</string>
+    <string name="txt_menu_info_03">Ataque</string>
+    <string name="txt_menu_info_04">Magia</string>
+    <string name="txt_menu_info_05">Armadura</string>
+    <string name="txt_menu_info_06">Color de pelo</string>
+    <string name="txt_menu_info_07">Robo de vida</string>
+    <string name="txt_menu_info_08">Critico</string>
+    <string name="txt_menu_info_09">Puntos de vida</string>
+    <string name="txt_menu_info_10">Creditos</string>
+    <string name="txt_menu_info_11">Personaje</string>
+    <string name="txt_menu_info_12">Jugar</string>
+    <string name="txt_menu_info_13">Salir</string>
+    <string name="txt_menu_info_14">Editor de Uniat Chan</string>
+
   </Spanish>
 </languages>

@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
 
     void DesactivarUI()
     {
-        UI.SetActive(false);
+        if (UI!=null)
+            UI.SetActive(false);
     }
 }
