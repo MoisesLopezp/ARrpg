@@ -123,11 +123,12 @@ public class scr_StatsEditor : MonoBehaviour {
 
     void OnDisable()
     {
-        UniatChan.transform.position = new Vector3(-0.5f, -8.5f, 0f);
+        if (UniatChan!=null)
+            UniatChan.transform.position = new Vector3(0.0f, -8.5f, 0f);
     }
 
     void OnEnable()
     {
-        UniatChan.transform.position = new Vector3(6f, -8.5f, 0f);
+        UniatChan.transform.position = new Vector3(5.5f, -8.5f, 0f);
     }
 }
