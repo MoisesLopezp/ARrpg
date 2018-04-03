@@ -8,7 +8,7 @@
     <string name="txt_game_info_04">Back</string>
     <string name="txt_game_info_05">Play again</string>
     <string name="txt_game_info_06">Fury</string>
-    <string name="txt_game_info_07">Fend</string>
+    <string name="txt_game_info_07">Defend</string>
     <string name="txt_game_info_08">Skills</string>
     <string name="txt_game_info_09">Start</string>
     <string name="txt_game_info_10">Attack</string>
@@ -22,8 +22,8 @@
     <string name="txt_game_info_18">Attack twice in a turn (6 magic)</string>
     <string name="txt_game_info_19">Turn your magic into permanent damage (1 magic minimum)</string>
     <string name="txt_game_info_20">Decides to heal</string>
-    <string name="txt_game_info_21">Decides to attack double</string>
-    <string name="txt_game_info_22">Decides to increase his damage</string>
+    <string name="txt_game_info_21">Decides to attack twice</string>
+    <string name="txt_game_info_22">Decides to increase hers damage</string>
     <string name="txt_game_info_23">Uniat Chan has won!</string>
     <string name="txt_game_info_24">Uniat Chan has been defeated</string>
     <string name="txt_game_info_25">It's the turn of </string>
