@@ -6,10 +6,15 @@ using UnityEngine.SceneManagement;
 public class Menu_Scr : MonoBehaviour
 {
     public GameObject Credits;
+    public GameObject OKAudio;
     public SkinnedMeshRenderer Hair;
     public static SaveGameFree.scr_DataSave MyData;
     public static string fileName = "PlayerData";
-    
+    public static bool OkSound = true;
+
+    public AudioSource as_menu;
+    public AudioSource as_select;
+
     public void Awake()
     {
         
@@ -34,6 +39,23 @@ public class Menu_Scr : MonoBehaviour
 
         //Init Lang
         scr_Lang.setLanguage();
+    }
+
+    public void SwitchAudio()
+    {
+        OkSound = !OkSound;
+        OKAudio.SetActive(OkSound);
+        if (OkSound)
+        {
+            as_menu.gameObject.SetActive(true);
+            as_select.gameObject.SetActive(true);
+            as_menu.Play();
+        } else
+        {
+            as_menu.gameObject.SetActive(false);
+            as_select.gameObject.SetActive(false);
+            as_menu.Stop();
+        }
     }
 
     public void Jugar()

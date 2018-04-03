@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class scr_Character : MonoBehaviour {
 
     public float f_maxhp = 100f;
+    [HideInInspector]
     public float f_hp;
     public float f_atk = 20f;
     [HideInInspector]
@@ -36,13 +37,13 @@ public class scr_Character : MonoBehaviour {
     [HideInInspector]
     public bool DoubleAttack = false;
     float f_datime = 0f;
-    GameObject da_target = null;
+    scr_Character da_target = null;
     [HideInInspector]
     public bool InDefense = false;
 
 	// Use this for initialization
 	void Start () {
-        Canvas = transform.GetChild(1).gameObject;
+        //Canvas = transform.GetChild(1).gameObject;
 
         if (IsPlayer)
         {
@@ -104,7 +105,6 @@ public class scr_Character : MonoBehaviour {
         if (f_hp <= 0)
         {
             IsDead = true;
-            scr_MGBattle.OrderBattle.Remove(this);
             if (IsPlayer)
             {
                 scr_MGBattle.Player = null;
@@ -116,9 +116,13 @@ public class scr_Character : MonoBehaviour {
             PlayDeath();
             CreateFXS(Gmb.fxs_KO, 6f, transform);
             Gmb.ImDeath(name);
+            if (Menu_Scr.OkSound)
+                Gmb.as_death.Play();
             if (scr_MGBattle.OrderBattle.Contains(this))
             {
                 scr_MGBattle.OrderBattle.Remove(this);
+                Gmb.CheckOrders();
+                Canvas.gameObject.SetActive(false);
             }
         } else
         {
@@ -126,13 +130,16 @@ public class scr_Character : MonoBehaviour {
         }
     }
 
-    public void Attack(GameObject Target)
+    public void Attack(scr_Character Target)
     {
+        if (Menu_Scr.OkSound)
+            Gmb.as_atack.Play();
         bool critic = false;
+        float _atk = f_atk;
         if (Random.Range(0f,1f)<=f_critic)
         {
             critic = true;
-            f_atk *= 1.5f;
+            _atk *= 1.5f;
             i_stamina++;
             CreateFXS(Gmb.fxs_CriticalHit, 6f, Target.transform);
         } else
@@ -140,9 +147,9 @@ public class scr_Character : MonoBehaviour {
             CreateFXS(Gmb.fxs_Hit, 6f, Target.transform);
         }
         if (critic && i_stamina<10) { i_stamina++; }
-        f_hp += f_atk *= f_vampiric;
+        f_hp += _atk * f_vampiric;
         if (f_hp > f_maxhp) { f_hp = f_maxhp; }
-        Target.SendMessage("AddDamage", f_atk);
+        Target.AddDamage(_atk);
         PlayAttack();
         if (DoubleAttack)
         {

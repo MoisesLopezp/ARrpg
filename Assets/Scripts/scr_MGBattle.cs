@@ -33,6 +33,12 @@ public class scr_MGBattle : MonoBehaviour {
     public Text txt_skill_02;
     public Text txt_skill_03;
 
+    public AudioSource as_music;
+    public AudioSource as_atack;
+    public AudioSource as_death;
+    public AudioSource as_Win;
+    public AudioSource as_Skill;
+
     public Button[] btn_Enemys = new Button[3];
 
     int IC = 0;
@@ -43,7 +49,10 @@ public class scr_MGBattle : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         OrderBattle.Clear();
-
+        if (Menu_Scr.OkSound)
+        {
+            as_music.Play();
+        }
     }
 	
 	// Update is called once per frame
@@ -63,6 +72,14 @@ public class scr_MGBattle : MonoBehaviour {
             {
                 AttackTarget(Player);
             }
+        }
+    }
+
+    public void CheckOrders()
+    {
+        if (IC>=OrderBattle.Count)
+        {
+            IC--;
         }
     }
 
@@ -125,7 +142,7 @@ public class scr_MGBattle : MonoBehaviour {
 
     public void AttackTarget(scr_Character target)
     {
-        OrderBattle[IC].Attack(target.gameObject);
+        OrderBattle[IC].Attack(target);
         Actions.text = OrderBattle[IC].gameObject.name+" "+scr_Lang.GetText("txt_game_info_14") +" " + target.gameObject.name;
         BattleOptions.SetActive(false);
         TargetPanel.SetActive(false);
@@ -146,7 +163,6 @@ public class scr_MGBattle : MonoBehaviour {
                 break;
             }
         }
-        OrderBattle[IC].Attack(target.gameObject);
         Actions.text = OrderBattle[IC].gameObject.name + " " + scr_Lang.GetText("txt_game_info_14") + " " + target.gameObject.name;
         BattleOptions.SetActive(false);
         TargetPanel.SetActive(false);
@@ -154,6 +170,7 @@ public class scr_MGBattle : MonoBehaviour {
         delay_turn = 3f;
         if (OrderBattle[IC].DoubleAttack)
             delay_turn = 5f;
+        OrderBattle[IC].Attack(target);
     }
 
     public void Defense()
@@ -205,6 +222,8 @@ public class scr_MGBattle : MonoBehaviour {
     {
         GameObject _fxs = Instantiate(fxs_Special, OrderBattle[IC].transform.position, Quaternion.identity);
         Destroy(_fxs, 6f);
+        if (Menu_Scr.OkSound)
+            as_Skill.Play();
         switch (Special)
         {
             case 0:
@@ -214,6 +233,8 @@ public class scr_MGBattle : MonoBehaviour {
                         OrderBattle[IC].f_hp += OrderBattle[IC].f_maxhp * 0.1f;
                         OrderBattle[IC].i_stamina--;
                     }
+                    if (OrderBattle[IC].f_hp > OrderBattle[IC].f_maxhp)
+                        OrderBattle[IC].f_hp = OrderBattle[IC].f_maxhp;
                     BattleOptions.SetActive(false);
                     SpecialPanel.SetActive(false);
                     delay_turn = 3f;
@@ -242,12 +263,15 @@ public class scr_MGBattle : MonoBehaviour {
                 }
                 break;
         }
+        SpecialPanel.SetActive(false);
     }
 
     public void NextTurn()
     {
         if (Enemys.Count==0) //Winer
         {
+            if (Menu_Scr.OkSound)
+                as_Win.Play();
             GameObject _fxs = Instantiate(fxs_Winer, Player.transform.position, Quaternion.identity);
             Destroy(_fxs, 10f);
             GameOver.SetActive(true);
