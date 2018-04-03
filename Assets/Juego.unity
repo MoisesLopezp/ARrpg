@@ -669,7 +669,11 @@ MonoBehaviour:
   txt_skill_01: {fileID: 1882713880}
   txt_skill_02: {fileID: 652101296}
   txt_skill_03: {fileID: 631630827}
-  as_music: {fileID: 0}
+  as_music: {fileID: 989455533}
+  as_atack: {fileID: 1007385788}
+  as_death: {fileID: 757558153}
+  as_Win: {fileID: 84294168}
+  as_Skill: {fileID: 1521823277}
   btn_Enemys:
   - {fileID: 2054059943}
   - {fileID: 2011041140}
