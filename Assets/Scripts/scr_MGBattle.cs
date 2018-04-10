@@ -48,7 +48,9 @@ public class scr_MGBattle : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        InGame = false;
         OrderBattle.Clear();
+        Enemys.Clear();
         if (Menu_Scr.OkSound)
         {
             as_music.Play();
