@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Vuforia;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -48,6 +49,7 @@ public class scr_MGBattle : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        CameraDevice.Instance.SetFocusMode(CameraDevice.FocusMode.FOCUS_MODE_CONTINUOUSAUTO);
         InGame = false;
         OrderBattle.Clear();
         Enemys.Clear();
