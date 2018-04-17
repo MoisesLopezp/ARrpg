@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1997,6 +1997,83 @@ Prefab:
       propertyPath: f_atk
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 224578074391830506, guid: 48592a83ad552f843af28f8f257211b2,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.057269096
+      objectReference: {fileID: 0}
+    - target: {fileID: 224578074391830506, guid: 48592a83ad552f843af28f8f257211b2,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.009935379
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166140150205410, guid: 48592a83ad552f843af28f8f257211b2, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 69.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166140150205410, guid: 48592a83ad552f843af28f8f257211b2, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 69.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166140150205410, guid: 48592a83ad552f843af28f8f257211b2, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 69.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224697876551648228, guid: 48592a83ad552f843af28f8f257211b2,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.040857315
+      objectReference: {fileID: 0}
+    - target: {fileID: 224702785524735392, guid: 48592a83ad552f843af28f8f257211b2,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.010239001
+      objectReference: {fileID: 0}
+    - target: {fileID: 224702785524735392, guid: 48592a83ad552f843af28f8f257211b2,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.04112053
+      objectReference: {fileID: 0}
+    - target: {fileID: 224939881044885648, guid: 48592a83ad552f843af28f8f257211b2,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.067337036
+      objectReference: {fileID: 0}
+    - target: {fileID: 224258681313887830, guid: 48592a83ad552f843af28f8f257211b2,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.161829
+      objectReference: {fileID: 0}
+    - target: {fileID: 224258681313887830, guid: 48592a83ad552f843af28f8f257211b2,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.09332657
+      objectReference: {fileID: 0}
+    - target: {fileID: 224947456120579084, guid: 48592a83ad552f843af28f8f257211b2,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.06829262
+      objectReference: {fileID: 0}
+    - target: {fileID: 224947456120579084, guid: 48592a83ad552f843af28f8f257211b2,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.024482727
+      objectReference: {fileID: 0}
+    - target: {fileID: 114054450766614912, guid: 48592a83ad552f843af28f8f257211b2,
+        type: 2}
+      propertyPath: mTrackableName
+      value: bicycle-808-ace-big
+      objectReference: {fileID: 0}
+    - target: {fileID: 114054450766614912, guid: 48592a83ad552f843af28f8f257211b2,
+        type: 2}
+      propertyPath: mAspectRatio
+      value: 1.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 114054450766614912, guid: 48592a83ad552f843af28f8f257211b2,
+        type: 2}
+      propertyPath: mHeight
+      value: 69.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48592a83ad552f843af28f8f257211b2, type: 2}
   m_IsPrefabParent: 0
@@ -3096,6 +3173,83 @@ Prefab:
       propertyPath: f_critic
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 224206538481552848, guid: e65dca63e876d1e49bca4005f4b290ce,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.040857315
+      objectReference: {fileID: 0}
+    - target: {fileID: 224978434634774990, guid: e65dca63e876d1e49bca4005f4b290ce,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.057269096
+      objectReference: {fileID: 0}
+    - target: {fileID: 224978434634774990, guid: e65dca63e876d1e49bca4005f4b290ce,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.009935379
+      objectReference: {fileID: 0}
+    - target: {fileID: 224260305806933902, guid: e65dca63e876d1e49bca4005f4b290ce,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.010239001
+      objectReference: {fileID: 0}
+    - target: {fileID: 224260305806933902, guid: e65dca63e876d1e49bca4005f4b290ce,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.04112053
+      objectReference: {fileID: 0}
+    - target: {fileID: 114827337098767626, guid: e65dca63e876d1e49bca4005f4b290ce,
+        type: 2}
+      propertyPath: mTrackableName
+      value: 35a02ee9021be900ed4dd546edc4e6b1--poker
+      objectReference: {fileID: 0}
+    - target: {fileID: 114827337098767626, guid: e65dca63e876d1e49bca4005f4b290ce,
+        type: 2}
+      propertyPath: mAspectRatio
+      value: 1.4605979
+      objectReference: {fileID: 0}
+    - target: {fileID: 114827337098767626, guid: e65dca63e876d1e49bca4005f4b290ce,
+        type: 2}
+      propertyPath: mHeight
+      value: 73.02989
+      objectReference: {fileID: 0}
+    - target: {fileID: 224934078780769344, guid: e65dca63e876d1e49bca4005f4b290ce,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.161829
+      objectReference: {fileID: 0}
+    - target: {fileID: 224934078780769344, guid: e65dca63e876d1e49bca4005f4b290ce,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.09332657
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552352853768628, guid: e65dca63e876d1e49bca4005f4b290ce, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 73.02989
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552352853768628, guid: e65dca63e876d1e49bca4005f4b290ce, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 73.02989
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552352853768628, guid: e65dca63e876d1e49bca4005f4b290ce, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 73.02989
+      objectReference: {fileID: 0}
+    - target: {fileID: 224029311346525358, guid: e65dca63e876d1e49bca4005f4b290ce,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.067337036
+      objectReference: {fileID: 0}
+    - target: {fileID: 224149477017432098, guid: e65dca63e876d1e49bca4005f4b290ce,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.06829262
+      objectReference: {fileID: 0}
+    - target: {fileID: 224149477017432098, guid: e65dca63e876d1e49bca4005f4b290ce,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.024482727
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e65dca63e876d1e49bca4005f4b290ce, type: 2}
   m_IsPrefabParent: 0
@@ -3202,7 +3356,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.3483034, y: 0, z: 0.5}
+      m_Extent: {x: 0.34232557, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -3254,7 +3408,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: d354b2be00000000000000bf000000000000803f000000000000000000000000d354b2be000000000000003f000000000000803f00000000000000000000803fd354b23e00000000000000bf000000000000803f000000000000803f00000000d354b23e000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 4c45afbe00000000000000bf000000000000803f0000000000000000000000004c45afbe000000000000003f000000000000803f00000000000000000000803f4c45af3e00000000000000bf000000000000803f000000000000803f000000004c45af3e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -5869,7 +6023,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.341716, y: 0, z: 0.5}
+      m_Extent: {x: 0.35971224, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -5921,7 +6075,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 66f5aebe00000000000000bf000000000000803f00000000000000000000000066f5aebe000000000000003f000000000000803f00000000000000000000803f66f5ae3e00000000000000bf000000000000803f000000000000803f0000000066f5ae3e000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 342cb8be00000000000000bf000000000000803f000000000000000000000000342cb8be000000000000003f000000000000803f00000000000000000000803f342cb83e00000000000000bf000000000000803f000000000000803f00000000342cb83e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
