@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="bicycle-808-ace-big" size="50.000000 69.500000" />
+    <ImageTarget name="35a02ee9021be900ed4dd546edc4e6b1--poker" size="50.000000 73.029892" />
     <ImageTarget name="Arania_Marca" size="50.000000 73.160172" />
     <ImageTarget name="Waifu_Marca" size="50.000000 73.051949" />
     <ImageTarget name="Tigre_Marca" size="50.000000 72.738388" />
