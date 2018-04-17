@@ -7,6 +7,7 @@ public class Menu_Scr : MonoBehaviour
 {
     public GameObject Credits;
     public GameObject OKAudio;
+    public GameObject ScreenLoading;
     public SkinnedMeshRenderer Hair;
     public static SaveGameFree.scr_DataSave MyData;
     public static string fileName = "PlayerData";
@@ -60,6 +61,14 @@ public class Menu_Scr : MonoBehaviour
 
     public void Jugar()
     {
+        StartCoroutine(IE_Jugar());
+    }
+
+
+    IEnumerator IE_Jugar()
+    {
+        ScreenLoading.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene("Juego");
     }
 

@@ -12,6 +12,7 @@ public class scr_MGBattle : MonoBehaviour {
     public static scr_Character Player;
     public static bool InGame = false;
 
+    public GameObject ScreenLoading;
     public GameObject BattleOptions;
     public GameObject TargetPanel;
     public GameObject SpecialPanel;
@@ -327,6 +328,13 @@ public class scr_MGBattle : MonoBehaviour {
 
     public void ExitToMenu()
     {
+        StartCoroutine(IE_Exit());
+    }
+
+    IEnumerator IE_Exit()
+    {
+        ScreenLoading.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene("Menu");
     }
 }

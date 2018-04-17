@@ -28,6 +28,7 @@
     <string name="txt_game_info_24">Uniat Chan has been defeated</string>
     <string name="txt_game_info_25">It's the turn of </string>
     <string name="txt_game_info_26">has fallen in combat</string>
+    <string name="txt_game_info_27">Loading</string>
 
     <string name="txt_name_enemy_01">Spider</string>
     <string name="txt_name_enemy_02">Bear</string>
@@ -86,6 +87,7 @@
     <string name="txt_game_info_24">Uniat Chan ha sido derrotada</string>
     <string name="txt_game_info_25">Es turno de</string>
     <string name="txt_game_info_26">ha caido en combate</string>
+    <string name="txt_game_info_27">Cargando</string>
 
     <string name="txt_name_enemy_01">Araña</string>
     <string name="txt_name_enemy_02">Oso</string>
